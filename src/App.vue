@@ -15,8 +15,8 @@
           Harold Molina
         </div>
       </div>
-      <div class="">
-        <router-view/>        
+      <div class="views">
+        <router-view/>
       </div>
     </article>
   </div>
