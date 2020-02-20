@@ -1,21 +1,43 @@
 <template>
   <div class="users">
     <div class="btn-area">
-      <button class="btn btn-primary btn-add--user" type="button" name="button">
-        + Add new user
-      </button>
+      <BaseButton msg="+ Add new user"/>
     </div>
     <div class="users-table">
+      <h4>Users</h4>
+      <table>
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Email</th>
+            <th>Dirección</th>
+            <th>Compañia</th>
+            <th>Opciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
 
+          </tr>
+        </tbody>
+        <tbody>
+
+        </tbody>
+      </table>
     </div>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-
+import BaseButton from '@/components/BaseButton'
 export default {
   name: 'Users',
+  components:{
+    BaseButton
+  },
   data(){
     return {
       users : {}
@@ -27,16 +49,8 @@ export default {
 }
 </script>
 <style lang="scss">
-  .btn{
-    border-radius: 8px;
-    padding: 16px;
-    color: #FFFFFF;
-    &.btn-primary{
-      background: #0054FE;
-    }
-  }
   .btn-area{
     margin-top: 25px;
-    margin-bot: 12px;
+    margin-bottom: 12px;
   }
 </style>
