@@ -59,6 +59,7 @@ export default {
   }
 }
 </script>
+
 <style lang="scss">
   .btn-area{
     margin-top: 25px;
