@@ -10,7 +10,6 @@
           <tr>
             <th>Id</th>
             <th>Nombre</th>
-            <th>Apellido</th>
             <th>Email</th>
             <th>Dirección</th>
             <th>Compañia</th>
@@ -18,8 +17,13 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-
+          <tr v-for="user in users" :key="user.id">
+            <td>{{user.id}}</td>
+            <td>{{user.username}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.address.street}}</td>
+            <td>{{user.company.name}}</td>
+            <td><router-link :to="{ name: 'Todos', params: { id: user.id}}">View Todos</router-link></td>
           </tr>
         </tbody>
         <tbody>
@@ -44,7 +48,14 @@ export default {
     }
   },
   mounted(){
-    this.users={}
+    axios.get('https://jsonplaceholder.typicode.com/users')
+    .then((response)=>{
+      this.users = response.data
+
+    })
+    .catch((error)=>{
+      console.log(error);
+    })
   }
 }
 </script>
