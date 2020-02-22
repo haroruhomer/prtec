@@ -1,11 +1,24 @@
 <template>
   <div class="about">
     <h1>This is an about {{userId}} </h1>
+    <div class="todo-list" v-for="todo in todosUncompleted" :key="todo.id">
+      <span>{{todo.title}}</span>
+      <BaseCheckbox v-model="todo.completed"/>
+    </div>
+    <div class="todo-list" v-for="todo in todosCompleted" :key="todo.id">
+      <span>{{todo.title}}</span>
+      <BaseCheckbox v-model="todo.completed"/>
+    </div>
   </div>
 </template>
 <script>
+  import BaseCheckbox from "../components/BaseCheckbox";
+
   export default{
     name: 'Todos',
+    components:{
+      BaseCheckbox
+    },
     data(){
       return{
         todos  : [],
@@ -32,10 +45,13 @@
     },
     methods: {
       filterByCompleted(val){
-        let filtered = this.todos.filter((todo) => todo.completed == val)
-        console.log(filtered);
-        return filtered
+        return this.todos.filter((todo) => todo.completed == val)
       }
     }
   }
 </script>
+<style lang="scss">
+  .todo-list{
+    display: flex;
+  }
+</style>
