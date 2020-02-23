@@ -26,6 +26,7 @@
 </script>
 
 <style lang="scss">
+  $font-size:30px;
   .base-checkbox {
     .bc-checkbox{
       -webkit-appearance: none;
@@ -33,8 +34,8 @@
       -ms-appearance: none;
       -o-appearance: none;
       appearance: none;
-      height: 16px;
-      width: 16px;
+      height: $font-size;
+      width: $font-size;
       background: #cbd1d8;
       border: none;
       border-radius: 5px;
@@ -45,14 +46,14 @@
         background: #9faab7;
       }
       &:checked {
-        background: #40e0d0;
+        background: #3fe04d;
       &:checked::before {
-        height: 16px;
-        width: 16px;
+        height: $font-size;
+        width: $font-size;
         position: absolute;
         content: '\2713';
         text-align: center;
-        line-height: 16px;
+        line-height: $font-size;
       }
       }
     }

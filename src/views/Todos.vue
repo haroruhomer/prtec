@@ -1,11 +1,13 @@
 <template>
-  <div class="about">
-    <h1>This is an about {{userId}} </h1>
+  <div class="todos">
+    <h1>To-do's </h1>
+    <div class="todo-list"><h2>Todo</h2><h2>Estado</h2></div>
     <div class="todo-list" v-for="todo in todosUncompleted" :key="todo.id">
       <span>{{todo.title}}</span>
       <BaseCheckbox v-model="todo.completed"/>
     </div>
-    <div class="todo-list" v-for="todo in todosCompleted" :key="todo.id">
+    <div class="separation"></div>
+    <div class="todo-list completed" v-for="todo in todosCompleted" :key="todo.id">
       <span>{{todo.title}}</span>
       <BaseCheckbox v-model="todo.completed"/>
     </div>
@@ -51,7 +53,27 @@
   }
 </script>
 <style lang="scss">
+  $bgCard: #FFFFFF;
+  .todos{
+    background: $bgCard;
+    padding: 25px;
+  }
   .todo-list{
+    padding: 20px 15px;
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &:nth-child(odd){
+      background: #F5F6FA;
+    }
+    &.completed{
+      text-decoration: line-through;
+    }
+  }
+  .separation{
+    width:80%;
+    border: 1px solid rgba(142, 141, 144, 0.98);
+    margin: 10px auto;
+
   }
 </style>

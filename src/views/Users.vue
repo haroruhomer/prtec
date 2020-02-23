@@ -6,7 +6,7 @@
     <div class="users-table">
       <h4>Users</h4>
       <table>
-        <thead>
+        <thead class="thead">
           <tr>
             <th>Id</th>
             <th>Nombre</th>
@@ -16,7 +16,7 @@
             <th>Opciones</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody class="tbody">
           <tr v-for="user in users" :key="user.id">
             <td>{{user.id}}</td>
             <td>{{user.username}}</td>
@@ -61,8 +61,29 @@ export default {
 </script>
 
 <style lang="scss">
+  $bgCard : #FFFFFF;
   .btn-area{
     margin-top: 25px;
     margin-bottom: 12px;
+  }
+  .users-table{
+    background: $bgCard;
+    padding: 25px;
+  }
+  table{
+    width: 100%;
+    text-align: left;
+    font-weight: 500;
+    .thead{
+      color: #9B9EAC;
+    }
+    .tbody{
+      tr:nth-child(odd){
+        background: #F5F6FA;
+      }
+      td{
+        padding: 25px 0;
+      }
+    }
   }
 </style>

@@ -20,6 +20,7 @@ export default {
   padding: 16px;
   color: #FFFFFF;
   border: none;
+  cursor: pointer;
   &.btn-primary{
     background: #0054FE;
   }
