@@ -50,6 +50,7 @@
       &:checked::before {
         height: $font-size;
         width: $font-size;
+        font-size: $font-size;
         position: absolute;
         content: '\2713';
         text-align: center;
